@@ -33,10 +33,10 @@ pip install streamlit PyPDF2 langchain langchain-community faiss-cpu google-gene
 
 ## 🚀 How to Run the App
 1. Clone the Repository:
-```bash
-git clone https://github.com/your-username/chat-with-pdf.git
-cd chat-with-pdf
-```
+   ```bash
+   git clone https://github.com/your-username/chat-with-pdf.git
+   cd chat-with-pdf
+   ```
 2. Add Your Google API Key:
    Create a .env file in the root directory.
    Add your API key:
