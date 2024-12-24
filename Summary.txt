@@ -1,0 +1,32 @@
+Tech Stack:
+
+Streamlit: For building an interactive user interface.
+Google Generative AI API: Used for embeddings and chat-based conversational models (Gemini).
+LangChain: Manages text splitting, embeddings, and question-answering pipelines.
+PyPDF2: Reads and extracts text from uploaded PDF files.
+FAISS(Facebook AI similarity search): Provides efficient vector search for storing and retrieving text embeddings.
+Python-dotenv: Loads API keys from .env files.
+
+Workflow:
+
+PDF Processing: Users upload PDF files through Streamlit's UI. The app extracts text from all pages using PyPDF2 and splits the text into manageable chunks with RecursiveCharacterTextSplitter.
+Vector Store Creation: Text chunks are embedded using Google Generative AI Embeddings and stored in a FAISS vector store, which is saved locally for reuse.
+
+Question-Answering Pipeline:
+
+User's query is matched with relevant text chunks using FAISS similarity search.
+The matched chunks are processed with a LangChain question-answering chain, leveraging Google Generative AI (Gemini) for high-accuracy responses.
+Streamlit Integration: Displays the system's reply and facilitates interaction between the user and the processed PDFs.
+
+High Accuracy Question-Answering:
+
+The pipeline provides highly accurate answers by basing responses strictly on the provided context. If the answer isn't available, it explicitly states so to avoid inaccuracies.
+
+Token Quota Limitation:
+
+The number of questions users can ask within a specific timeframe is limited by the API token quota. This limitation impacts scalability for large-scale or frequent usage.
+
+User Experience:
+
+Interactive and user-friendly, allowing PDF uploads and immediate processing.
+Includes a prompt-based query system, ensuring users receive detailed and contextually relevant answers.
